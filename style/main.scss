@@ -1,0 +1,28 @@
+@import './utils/mixin';
+@import './utils/vars';
+@import './blocks/people';
+@import './blocks/person';
+body {
+	margin: 0;
+}
+// $tablet-min-width: 750px;
+// $destop-min-width: 1000px;
+// $big-destop-min-width: 1500px;
+
+.container {
+	width: 430px;
+	margin: 0 auto;
+	padding: 0 15px;
+
+	@include on-desktop {
+		width: 890px;
+	}
+
+	// @include on-tablet {
+	// 	padding: 0 30px;
+	// }
+
+	// @include on-desktop {
+	// 	padding: 0 50px;
+	// }
+}
