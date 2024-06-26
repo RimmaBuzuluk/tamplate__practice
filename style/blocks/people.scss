@@ -1,6 +1,5 @@
 .people {
 	margin: 0, auto;
-	background-color: aqua;
 
 	@include page-grid;
 	&__person {

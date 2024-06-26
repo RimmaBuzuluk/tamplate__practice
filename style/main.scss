@@ -2,12 +2,11 @@
 @import './utils/vars';
 @import './blocks/people';
 @import './blocks/person';
+
 body {
 	margin: 0;
+	font-family: Arial, sans-serif;
 }
-// $tablet-min-width: 750px;
-// $destop-min-width: 1000px;
-// $big-destop-min-width: 1500px;
 
 .container {
 	width: 430px;
@@ -17,12 +16,4 @@ body {
 	@include on-desktop {
 		width: 890px;
 	}
-
-	// @include on-tablet {
-	// 	padding: 0 30px;
-	// }
-
-	// @include on-desktop {
-	// 	padding: 0 50px;
-	// }
 }
