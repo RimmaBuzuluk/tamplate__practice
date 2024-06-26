@@ -3,23 +3,27 @@
 	flex-direction: column;
 	align-items: center;
 	height: auto;
+	position: relative; // Додано для відносного позиціонування
+
 	&__photo {
 		width: 200px;
 		height: auto;
 		position: relative;
+
 		img {
 			width: 100%;
 			height: auto;
 			border-radius: 200px;
 		}
 	}
+
 	&__rank {
 		position: absolute;
 		top: 84px;
 		right: 10px;
 		background-color: $range-background-color;
-		width: 32;
-		height: 32;
+		width: 32px; // Додано одиниці вимірювання
+		height: 32px; // Додано одиниці вимірювання
 		border-radius: 32px;
 		display: flex;
 		align-items: center;
@@ -28,36 +32,49 @@
 		font-size: 16px;
 		font-weight: 700;
 	}
+
 	&__name {
 		color: $person-name-text-color;
 		font-size: 20px;
 		font-weight: 700;
 	}
+
 	&__extra {
-		// display: none;
-		display: flex;
-		justify-content: center;
 		font-size: 18px;
 		color: $extra-text-hover;
+		display: none; // Початково приховано
+		position: absolute; // Додано для абсолютного позиціонування
+		bottom: -20px; // Змістити елемент вниз
+		left: 50%;
+		transform: translateX(-50%); // Центрувати по горизонталі
 
 		&::after {
 			content: attr(data-pay) 'M';
 		}
+
 		&--sport {
 			&::after {
 				content: attr(data-sport) ',';
 			}
 		}
+
 		&--pay {
 			&::before {
 				content: '  $';
 			}
 		}
 	}
-	// transition: width 1s, height 1s;
+
 	&:hover {
+		z-index: 10;
 		background-color: $person-background-hover;
 		border-radius: 10px;
-		transform: scale(1.1);
+		transform: scale(1.2);
+		height: 250px;
+		height: auto;
+		.person__extra {
+			display: flex;
+			justify-content: center;
+		}
 	}
 }
