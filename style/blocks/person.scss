@@ -2,8 +2,33 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: auto;
-	position: relative; // Додано для відносного позиціонування
+	// justify-content: center;
+	position: relative;
+
+	width: fit-content;
+
+	width: 200px;
+	height: 287px;
+	margin: 0;
+	transition: transform 0.3s ease;
+	&:hover {
+		transform: scale(1.2);
+		padding: 10px;
+		z-index: 1;
+		background-color: $person-background-hover;
+		border-radius: 10px;
+		&:hover .person__extra {
+			opacity: 100;
+			visibility: visible;
+			position: static;
+		}
+		&:hover .person__photo img {
+			border-radius: 60px;
+		}
+		&:hover .person__name {
+			font-size: 24px;
+		}
+	}
 
 	&__photo {
 		width: 200px;
@@ -14,6 +39,7 @@
 			width: 100%;
 			height: auto;
 			border-radius: 200px;
+			transition: border-radius 1s ease;
 		}
 	}
 
@@ -22,8 +48,8 @@
 		top: 84px;
 		right: 10px;
 		background-color: $range-background-color;
-		width: 32px; // Додано одиниці вимірювання
-		height: 32px; // Додано одиниці вимірювання
+		width: 32px;
+		height: 32px;
 		border-radius: 32px;
 		display: flex;
 		align-items: center;
@@ -34,20 +60,20 @@
 	}
 
 	&__name {
+		display: block;
 		color: $person-name-text-color;
 		font-size: 20px;
 		font-weight: 700;
+		transition: font-size 1s ease;
+		text-align: center;
+		margin: 8px 0;
 	}
 
 	&__extra {
 		font-size: 18px;
 		color: $extra-text-hover;
-		display: none; // Початково приховано
-		position: absolute; // Додано для абсолютного позиціонування
-		bottom: -20px; // Змістити елемент вниз
-		left: 50%;
-		transform: translateX(-50%); // Центрувати по горизонталі
-
+		text-align: center;
+		opacity: 0;
 		&::after {
 			content: attr(data-pay) 'M';
 		}
@@ -64,17 +90,10 @@
 			}
 		}
 	}
+}
 
-	&:hover {
-		z-index: 10;
-		background-color: $person-background-hover;
-		border-radius: 10px;
-		transform: scale(1.2);
-		height: 250px;
-		height: auto;
-		.person__extra {
-			display: flex;
-			justify-content: center;
-		}
-	}
+.details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }

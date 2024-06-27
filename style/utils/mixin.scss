@@ -19,7 +19,7 @@
 	display: grid;
 	column-gap: 20px;
 	row-gap: 40px;
-
+	// grid-template-rows: 231px;
 	--columns: 2;
 
 	grid-template-columns: repeat(var(--columns), 1fr);
